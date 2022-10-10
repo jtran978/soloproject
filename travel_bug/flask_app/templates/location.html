@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" href="fundamentals/travel_bug/static/css/mystyle.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+
+
+<body class="bg-info text-white">
+    <div> <h1  class="container text-center bg-light text-info"> Travel Bug! </h1>
+</div>
+<br>
+<br>
+    <div class="container">
+
+        <h3> Welcome to Travel Bug! This is a website designed so that you can log and keep track of all of the amazing places you have been!</h3>
+    </div>
+    <br> 
+    <br>
+    <div class="d-flex justify-content-around">
+        <form action="/login" method="post" class="col-4 p-4 bg-light text-info">
+            <h2 class="text-info text-center">Login</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Login" class="btn btn-info">
+
+            </div>
+        </form>
+        <form action="/register" method="post" class="col-4 p-4 bg-light text-info">
+            <h2 class="text-info text-center ">Register</h2>
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password:</label>
+                <input type="password" name="confirm" class="form-control">
+            </div>
+            <div class="text-center">
+                <input type="submit" value="Register" class="btn btn-info">
+
+            </div>
+        </form>
+    </div>
+</body>
+<style>
+
+    body {
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    thead th{
+    font-size: 25px;
+    }
+    h1 {
+        font-size: 50px;
+        border: 2px solid white;
+        border-radius: 10px;
+    }
+    
+    h3 {
+        text-size-adjust: 25px;
+        border: 2px solid white;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    form {
+        border: 2px solid white;
+        border-radius: 10px;
+
+    }
+    
+</style>
+</html>
